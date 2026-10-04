@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3b1f0e"/>
+      <stop offset="100%" stop-color="#6b3a22"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c4773a"/>
+      <stop offset="100%" stop-color="#e4a84b"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fdf8f2"/>
+      <stop offset="100%" stop-color="#f0e6d8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer circle -->
+  <circle cx="100" cy="100" r="96" fill="url(#bg)"/>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="url(#gold)" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6"/>
+
+  <!-- Croissant body (curved) -->
+  <path d="M 62 115 Q 55 85 75 68 Q 95 52 120 60 Q 148 68 150 90 Q 154 115 138 128 Q 122 142 100 138 Q 75 132 62 115 Z"
+        fill="url(#gold)" opacity="0.95"/>
+  <!-- Croissant highlight -->
+  <path d="M 75 75 Q 95 60 118 68 Q 140 76 144 95"
+        stroke="rgba(255,255,255,0.35)" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <!-- Croissant tip left -->
+  <path d="M 62 115 Q 48 118 44 108 Q 50 96 62 100 Z"
+        fill="#c4773a"/>
+  <!-- Croissant tip right -->
+  <path d="M 138 128 Q 150 138 148 150 Q 138 152 132 142 Z"
+        fill="#c4773a"/>
+  <!-- Shine lines -->
+  <path d="M 82 82 Q 100 70 118 76" stroke="rgba(255,255,255,0.25)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M 78 95 Q 100 83 122 90" stroke="rgba(255,255,255,0.18)" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+  <!-- Star sparkles -->
+  <g fill="url(#gold)" opacity="0.85">
+    <polygon points="164,48 166,54 172,54 167,58 169,64 164,60 159,64 161,58 156,54 162,54" transform="scale(0.7) translate(68,22)"/>
+    <polygon points="164,48 166,54 172,54 167,58 169,64 164,60 159,64 161,58 156,54 162,54" transform="scale(0.45) translate(46,188)"/>
+  </g>
+
+  <!-- Bottom text arc -->
+  <path id="arcBottom" d="M 30 140 Q 100 175 170 140" fill="none"/>
+  <text font-family="Georgia, serif" font-size="11.5" fill="rgba(228,168,75,0.8)" letter-spacing="3" font-weight="400">
+    <textPath href="#arcBottom" startOffset="50%" text-anchor="middle">ARTISAN · PASTRY · STUDIO</textPath>
+  </text>
+</svg>
