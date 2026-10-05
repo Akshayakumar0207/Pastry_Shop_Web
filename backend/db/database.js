@@ -6,7 +6,6 @@ const db = createClient({
   authToken: process.env.TURSO_TOKEN,
 });
 
-// mysql2-compatible pool shim — all routes work with ZERO changes
 const pool = {
   query: async (sql, params = []) => {
     const result = await db.execute({ sql, args: params ?? [] });
@@ -122,9 +121,6 @@ const initializeDatabase = async () => {
     console.log('✅ Turso DB ready — all 8 tables created');
   } catch (err) {
     console.error('❌ Turso DB error:', err.message);
-    if (!process.env.TURSO_URL || process.env.TURSO_URL.includes('your-db')) {
-      console.error('👉 Edit .env — set TURSO_URL and TURSO_TOKEN from your Turso dashboard');
-    }
     throw err;
   }
 };
@@ -151,7 +147,7 @@ const seedProducts = async () => {
     ['Choco Chip Cookie Dough','cupcakes',140,'1pc','chocolate chip cookie dough.jpeg','Cookie dough stuffed chocolate chip cupcake'],
     ['Lemon Blueberry Cupcake','cupcakes',130,'1pc','lemon blueberry.jpeg','Bright lemon with blueberry compote'],
     ['Customized Cupcakes','cupcakes',180,'1pc','customizied cupcakes.jpeg','Personalized for any occasion'],
-    ["S'Mores Galore",'icecream',180,'1 scoop',"s'mores galore.jpeg",'Graham cracker, chocolate, marshmallow'],
+    ["S'Mores Galore",'icecream',180,'1 scoop',"s'mores galore.jpeg",'Graham cracker chocolate marshmallow'],
     ['Hazelnut Gelato','icecream',200,'1 scoop','hazelnut gelato.jpeg','Authentic Italian hazelnut gelato'],
     ['Rocky Road','icecream',180,'1 scoop','rocky road.jpeg','Chocolate with marshmallow and almonds'],
     ['Cookies and Cream','icecream',170,'1 scoop','cookie and cream.jpeg','Oreo chunks in vanilla cream base'],
