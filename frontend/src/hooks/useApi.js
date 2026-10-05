@@ -41,4 +41,5 @@ export const eventsApi = {
   sendContact: (data) => api.post('/events/contact', data),
 };
 
+export const getImageUrl = (filename) => `/images/${filename}`; 
 export default api;
